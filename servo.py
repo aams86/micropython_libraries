@@ -41,7 +41,7 @@ class Servo:
         else:
             return 0  # Unsupported platform
 
-    def set(self, angle):
+    def write(self, angle):
         """Move the servo to the specified angle (0 to max degrees)."""
         angle = max(0, min(self.degrees, angle))  # Clamp angle to valid range
         duty = self._angle_to_duty(angle)
